@@ -1,14 +1,16 @@
 body {
-  background-image: linear-gradient(135deg, #d2f992 10%, #61d1fe 100%);
+  background-image: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Open Sans", sans-serif;
   color: #333333;
+  margin: 0;
+  padding: 0;
 }
 
 .box-form {
-  margin: 0 auto;
+  margin: 5% auto;
   width: 80%;
   background: #FFFFFF;
   border-radius: 10px;
@@ -17,45 +19,78 @@ body {
   flex: 1 1 100%;
   align-items: stretch;
   justify-content: space-between;
-  box-shadow: 0 0 20px 6px #090b6f85;
+  box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.2);
+  max-width: 1200px;
+  transition: all 0.3s ease;
 }
+.box-form:hover {
+  transform: translateY(-10px);
+}
+
 @media (max-width: 980px) {
   .box-form {
     flex-flow: wrap;
     text-align: center;
     align-content: center;
     align-items: center;
+    width: 90%;
   }
 }
+
+@media (max-width: 600px) {
+  .box-form {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
 .box-form div {
   height: auto;
 }
+
 .box-form .left {
   color: #FFFFFF;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("image/lp.webp");
   overflow: hidden;
+  flex: 1;
+  min-width: 300px;
+  position: relative;
 }
+.box-form .left:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .box-form .left .overlay {
   padding: 30px;
   width: 100%;
   height: 100%;
-  /* background: ; */
   overflow: hidden;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
+
 .box-form .left .overlay h1 {
-  font-size: 10vmax;
-  line-height: 1;
+  font-size: 4rem;
+  line-height: 1.2;
   font-weight: 900;
   margin-top: 40px;
   margin-bottom: 20px;
 }
+
 .box-form .left .overlay span p {
   margin-top: 30px;
   font-weight: 900;
 }
+
 .box-form .left .overlay span a {
   background: #3b5998;
   color: #FFFFFF;
@@ -63,51 +98,82 @@ body {
   padding: 14px 50px;
   border-radius: 100px;
   display: inline-block;
-  box-shadow: 0 3px 6px 1px #042d4657;
+  box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
+.box-form .left .overlay span a:hover {
+  background: #314d86;
+}
+
 .box-form .left .overlay span a:last-child {
   background: #1dcaff;
   margin-left: 30px;
 }
+.box-form .left .overlay span a:last-child:hover {
+  background: #1bb8e8;
+}
+
 .box-form .right {
   padding: 40px;
   overflow: hidden;
+  flex: 1;
+  min-width: 300px;
 }
+
 @media (max-width: 980px) {
   .box-form .right {
     width: 100%;
+    padding: 20px;
   }
 }
-.box-form .right h5 {
-  font-size: 6vmax;
-  line-height: 0;
+
+@media (max-width: 600px) {
+  .box-form .right {
+    padding: 20px 10px;
+  }
 }
+
+.box-form .right h5 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #444;
+}
+
 .box-form .right p {
   font-size: 14px;
-  color: #B0B3B9;
+  color: #777;
 }
+
 .box-form .right .inputs {
   overflow: hidden;
 }
+
 .box-form .right input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 25px;
   font-size: 16px;
   border: none;
   outline: none;
-  border-bottom: 2px solid #B0B3B9;
+  border-bottom: 2px solid #ddd;
+  transition: all 0.3s ease;
 }
+.box-form .right input:focus {
+  border-bottom: 2px solid #ff9a9e;
+}
+
 .box-form .right .remember-me--forget-password {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .box-form .right .remember-me--forget-password input {
   margin: 0;
   margin-right: 7px;
   width: auto;
 }
+
 .box-form .right button {
   float: right;
   color: #fff;
@@ -117,9 +183,13 @@ body {
   display: inline-block;
   border: 0;
   outline: 0;
-  box-shadow: 0px 4px 20px 0px #49c628a6;
-  background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
+  box-shadow: 0px 4px 20px 0px rgba(73, 198, 40, 0.65);
+  background-image: linear-gradient(135deg, #ff9a9e 10%, #fad0c4 100%);
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.box-form .right button:hover {
+  background-image: linear-gradient(135deg, #fad0c4 10%, #ff9a9e 100%);
 }
 
 label {
@@ -145,10 +215,6 @@ label:hover::before {
   content: ' \f00c';
   color: #fff;
   cursor: pointer;
-  background: #70F570;
-}
-
-label:hover::before .text-checkbox {
   background: #70F570;
 }
 
