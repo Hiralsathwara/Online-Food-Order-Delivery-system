@@ -10,16 +10,16 @@ html{
 }
 
 section{
-    width: 100%;
+    width:100%;
     height: 100vh;
-    padding-top: 80px; /* Adjust padding to create space for fixed navigation */
+    padding-top: 9px; /* Adjust padding to create space for fixed navigation */
 }
 
 section nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
+    position:relative;
     right: 0;
     left: 0;
     width: 100%; /* Full width */
@@ -27,7 +27,7 @@ section nav{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     z-index: 1000;
     padding: 15px 50px; /* Adjust padding as needed */
-    box-sizing: border-box;
+    box-sizing:(Edge 12, Firefox 29, Safari 5, Chrome 10, IE 8, Opera 7) border-box;
      /* Ensures padding is included in the width */
 }
 
@@ -43,13 +43,13 @@ section nav ul{
 
 section nav ul li{
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 section nav ul li a{
     text-decoration: none;
     color: #000;
-    font-weight: 500;
+    font-weight: 550;
     font-size: 17px;
     transition: 0.1s;
 }
@@ -74,7 +74,7 @@ section nav ul li a:hover{
 section nav .icon i{
     font-size: 18px;
     color: #000;
-    margin: 0 20px;
+    margin: 0 10px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -88,14 +88,14 @@ section .main{
     align-items: center;
     justify-content: space-around;
     position: relative;
-    top: 70px;
+    top: 50px;
 }
 
 section .main .men_text h1{
     font-size: 60px;
     position: relative;
     top: -100px;
-    left: 20px;
+    left: 100px;
 }
 
 section .main .men_text h1 span{
@@ -107,24 +107,25 @@ section .main .men_text h1 span{
 }
 
 section .main .main_image img{
-    width: 700px;
+    width: 70%;
     position: relative;
-    left: 70px;
+    left: 270px;
+    top:-20px ;
 }
 
 section pre{
     width: 650px;
-    text-align: justify;
+    text-align: left;
     position: relative;
-    left: 45px;
+    left: 10px;
     bottom: 150px;
-    line-height: 40px;
-    font-size: 25px;
-    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+
 }
 
 section .main_btn{
-    background: #fac031;
+    background: #0827f0;
     position: relative;
     left: 400px;
     bottom: 70px;
@@ -150,6 +151,91 @@ section .main_btn:hover i{
     transform: translateX(7px);
 }
 
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    section .main .men_text h1 {
+        font-size: 50px;
+    }
+
+    section .main .men_text h1 span {
+        font-size: 60px;
+    }
+
+    section .main .main_image img {
+        width: 60%;
+    }
+}
+
+@media (max-width: 992px) {
+    section nav ul {
+        display: none; /* Hide nav links on smaller screens */
+    }
+
+    section nav .icon {
+        display: block; /* Show icon for mobile menu */
+    }
+
+    section .main .men_text h1 {
+        font-size: 40px;
+    }
+
+    section .main .men_text h1 span {
+        font-size: 50px;
+    }
+
+    section .main .main_image img {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    section nav {
+        flex-direction: column; /* Stack nav elements */
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    section .main {
+        flex-direction: column; /* Stack main content */
+        align-items: center;
+    }
+
+    section .main .men_text h1 {
+        font-size: 30px;
+        text-align: center; /* Center text */
+    }
+
+    section .main .men_text h1 span {
+        font-size: 40px;
+    }
+
+    section .main .main_image img {
+        width: 80%;
+    }
+
+    section pre {
+        text-align: center; /* Center pre text */
+    }
+
+    section .main_btn {
+        width: 100%; /* Full width button */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    section .main .men_text h1 {
+        font-size: 25px;
+    }
+
+    section .main .men_text h1 span {
+        font-size: 35px;
+    }
+
+    section .main .main_image img {
+        width: 90%;
+    }
+}
 
 
 /*About*/
@@ -208,7 +294,99 @@ section .main_btn:hover i{
     bottom: 150px;
 }
 
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .about .about_main .image img {
+        width: 600px;
+    }
 
+    .about .about_main .about_text h1 {
+        font-size: 45px;
+    }
+
+    .about .about_main .about_text pre {
+        width: 550px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about .about_main {
+        flex-direction: column; /* Stack elements */
+        align-items: center;
+    }
+
+    .about .about_main .image img {
+        width: 500px;
+        top: 30px; /* Adjust top position */
+    }
+
+    .about .about_main .about_text h1 {
+        font-size: 40px;
+        bottom: 30px; /* Adjust bottom position */
+    }
+
+    .about .about_main .about_text pre {
+        width: 450px;
+        margin-right: 0; /* Center text */
+        padding-left: 0; /* Remove negative padding */
+    }
+
+    .about .about_btn {
+        left: 0;
+        bottom: 30px; /* Adjust bottom position */
+        transform: translateX(0); /* Center button */
+    }
+}
+
+@media (max-width: 768px) {
+    .about .about_main .image img {
+        width: 400px;
+        top: 20px; /* Adjust top position */
+    }
+
+    .about .about_main .about_text h1 {
+        font-size: 35px;
+        bottom: 20px; /* Adjust bottom position */
+    }
+
+    .about .about_main .about_text h3 {
+        font-size: 25px;
+    }
+
+    .about .about_main .about_text pre {
+        width: 350px;
+        text-align: center; /* Center text */
+    }
+
+    .about .about_btn {
+        bottom: 20px; /* Adjust bottom position */
+        transform: translateX(0); /* Center button */
+    }
+}
+
+@media (max-width: 576px) {
+    .about .about_main .image img {
+        width: 300px;
+        top: 10px; /* Adjust top position */
+    }
+
+    .about .about_main .about_text h1 {
+        font-size: 30px;
+        bottom: 10px; /* Adjust bottom position */
+    }
+
+    .about .about_main .about_text h3 {
+        font-size: 20px;
+    }
+
+    .about .about_main .about_text pre {
+        width: 250px;
+        text-align: center; /* Center text */
+    }
+
+    .about .about_btn {
+        bottom: 10px; /* Adjust bottom position */
+        transform: translateX(0)}}
 
 /*Menu*/
 
